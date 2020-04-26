@@ -1,3 +1,9 @@
+<?PHP
+
+require ('db.php');
+
+?>
+
 <!doctype html>
 <html>
 <head>
