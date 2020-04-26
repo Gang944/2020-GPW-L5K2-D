@@ -101,7 +101,7 @@ require ('db.php');
   <!--timetable-->
            <div class="all2">
            <h4 style="color:#fff">Time Tables</h4>
-        <iframe style="border:0; background:rgba(255,255,255,0.5);" scrolling="auto" src="piao.html" width="1000" height="544"></iframe>
+        <iframe style="border:0; background:rgba(255,255,255,0.5);" scrolling="auto" src="piao.php" width="1000" height="544"></iframe>
            </div>
    <!--timetable--> 
     <!--ticksts--> 
