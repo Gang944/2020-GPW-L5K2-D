@@ -91,7 +91,7 @@ require ('db.php');
 <div class="tom" style="margin-top:20px;">
 <input name="clear" style="width:80px; height:30px;" type="reset" value="Clear" />
 
-<input name="play" style="width:80px; height:30px; " type="submit" name="submit" value="Order" />
+<input name="submit" style="width:80px; height:30px; " type="submit" name="submit" value="Order" />
 
 </div>
 <span style="float:right;">attention：mark * is required！</span>
