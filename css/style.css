@@ -1,0 +1,205 @@
+@charset  "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+img{
+	border:0;
+}
+input::-webkit-input-placeholder,
+-moz-input-placeholder,
+-ms-,input-placeholder,
+-o-input-placeholder
+ { /* WebKit*/  
+     /*改变placeholder中颜色*/
+}  
+body{
+    background:url(../images/bg.png) no-repeat;
+	background-color: rgb(28, 119, 172);
+	animation:go 100s linear infinite;
+}
+	@keyframes go{
+		
+	0%{
+			background-position:300 0; 
+			}
+			50%{
+				
+				background-position:500px;
+				}
+			
+		100%{
+			background-position:300 0; 
+			}
+		}
+.header{
+	min-width: 1200px;
+	height: 62px;
+	background: #f7f8f8;
+	border-bottom: 1px solid #d6dfea;
+}
+.header .inner{
+	width: 1160px;
+	height: 62px;
+	padding-left:20px;
+	padding-right:20px;
+	margin: 0 auto;
+}
+.header .inner .logo{
+   width: 510px;
+   height: 62px;    
+   float: left;
+}
+.header .inner .logo a{
+	display: block;
+	width: 182px;
+    height: 62px; 
+    
+}
+.header .inner .headlink{
+	float: right;
+	font-size: 12px;
+
+}
+.header .inner .headlink a{
+	font-size: 12px;
+	color: #1d5494;
+	line-height: 62px;
+}
+.middle{
+	min-width:1200px;
+	height:500px;
+	
+	}
+.middle .cont{
+	margin: 50px auto;
+	width: 1200px;
+	height: 400px;
+	position: relative;
+	
+	
+	/*background:linear-gradient(#c0cdd9,#FFF);*//*背景渐变*/
+}
+
+	
+	
+	
+.cont .banner{
+     height: 400px;
+     width: 860px;
+}
+
+
+    .main {
+        margin: 0 auto;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 15px;
+        width: 338px;
+        height: 398px;
+        background: #FFFFFF;
+        /*以下css用于让登录表单垂直居中在界面,可删除*/
+        position: absolute;
+        top: 0;
+	    right: 0px;
+	    border-radius: 3px;
+	    border:1px solid #d6dfea;
+	    background:#FFF;
+	    box-shadow:2px 0px 20px 2px #333;
+    }
+
+.title {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+    }
+ 
+    .title span {
+        font-size: 18px;
+        color: #353f42;
+    }
+ 
+    .title-msg {
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+    }
+ 
+    .title:hover{
+        cursor: default	;
+    }
+ 
+    .title-msg:hover{
+        cursor: default	;
+    }
+ 
+    .title-msg span {
+        font-size: 12px;
+        color: #707472;
+    }
+ 
+    .input-content {
+        width: 100%;
+        height: 120px;
+    }
+ 
+    .input-content input {
+        width: 330px;
+        height: 40px;
+        border: 1px solid #dad9d6;
+        background: #ffffff;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+ 
+    .enter-btn {
+        width: 350px;
+        height: 40px;
+        color: #fff;
+        background: #0bc5de;
+        line-height: 40px;
+        text-align: center;
+        border: 0px;
+    }
+ 
+    .foor{
+        width: 100%;
+        height: auto;
+        color: #9b9c98;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+ 
+    .enter-btn:hover {
+        cursor:pointer;
+        background: #1db5c9;
+    }
+ 
+    .foor div:hover {
+        cursor:pointer;
+        color: #484847;
+        font-weight: 600;
+    }
+ 
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+
+.foot{
+	width:100%;
+	height:auto;
+	background:#d9e6f7;
+	text-align:center;
+	color:#1d5494;
+   position:fixed;
+	bottom:0px;
+
+}
