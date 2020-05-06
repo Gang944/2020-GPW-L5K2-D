@@ -2,7 +2,52 @@
 
 require ('db.php');
 
+if (isset($_POST['submit'])) {
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        $error = "username or password is empty";
+    } else {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        
+        $query  = "SELECT username, password ";
+        $query .= "FROM User ";
+        $query .= "WHERE username = '$username' AND password = '$password' ";
+        
+        $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die("query is wrong");
+    }
+        
+        $numrows=mysqli_num_rows($result);
+        if ($numrows == 1) {
+            session_start();
+            
+            $_SESSION['login_user'] = $username;
+            $_SESSION['login_level'] = $row['level'];
+
+            if ($_SESSION['login_level'] == 1) {
+                header('location: purchase-tickets.php');
+            } else if ($_SESSION['login_level'] == 2) {
+                header('location: index.php');
+            } 
+
+        }
+        else {
+            echo "login failed" ;
+        }
+        mysqli_free_result($result);
+    }
+}
+
+mysqli_close($connection);
+
+if (isset($error)) {
+    echo"<span>" . $error ."</span>";
+}
+
 ?>
+
 
 <!doctype html>
 <html>
