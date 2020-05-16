@@ -202,7 +202,7 @@ require ('db.php');
                         <th>End</th>
                         <th>Distance</th>
                         <th>Economy Cost</th>
-                        <th>Economy Cost</th>
+                        <th>Business Cost</th>
                     </tr>
                     </thead>
                     
