@@ -198,10 +198,11 @@ require ('db.php');
                     <button a href="order-ticket.php">Order</button>
                     <thead>
                     <tr>
-                      <th>Start Station</th>
-                        <th>Terminus</th>
+                      <th>Start</th>
+                        <th>End</th>
                         <th>Distance</th>
-                        <th>Price</th>
+                        <th>Economy Cost</th>
+                        <th>Economy Cost</th>
                     </tr>
                     </thead>
                     
@@ -213,6 +214,7 @@ require ('db.php');
     echo "<td>". $row["Terminus"] . "</td>";
     echo "<td>". $row["Distance"] . "</td>";
     echo "<td>". $row["Distance"]*25 . "</td>";
+    echo "<td>". $row["Distance"]*95 . "</td>";
 
     echo "</tr>";
 }
