@@ -180,10 +180,9 @@ require ('db.php');
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Tickets Information</h6>
             </div>
-              
               <?php
               
-                $query  = "SELECT Route_no, Starting_station, Terminus ";
+                $query  = "SELECT Route_no, Starting_station, Terminus, Distance ";
                 $query .= "FROM Route "; 
 
                 $result = mysqli_query($connection, $query);
@@ -193,14 +192,17 @@ require ('db.php');
                 }
               
               ?>
-              
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <button a href="order-ticket.php">Order</button>
                     <thead>
                     <tr>
-                      <th>Start Station</th>
-                        <th>Terminus</th>
+                      <th>Start</th>
+                        <th>End</th>
+                        <th>Distance</th>
+                        <th>Economy Cost</th>
+                        <th>Business Cost</th>
                     </tr>
                     </thead>
                     
@@ -210,6 +212,9 @@ require ('db.php');
     echo "<tr>";
     echo "<td>". $row["Starting_station"] . "</td>";
     echo "<td>". $row["Terminus"] . "</td>";
+    echo "<td>". $row["Distance"] . "</td>";
+    echo "<td>". $row["Distance"]*25 . "</td>";
+    echo "<td>". $row["Distance"]*95 . "</td>";
 
     echo "</tr>";
 }
