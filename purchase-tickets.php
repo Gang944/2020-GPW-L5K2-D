@@ -141,7 +141,11 @@ require ('db.php');
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Peter</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><h6><?php
+                if (isset($_SESSION['login_user'])) {
+                  echo "Welcome, " . $_SESSION['login_user'];
+                }
+?></h6></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -195,7 +199,6 @@ require ('db.php');
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <button a href="order-ticket.php">Order</button>
                     <thead>
                     <tr>
                       <th>Start</th>
@@ -213,8 +216,8 @@ require ('db.php');
     echo "<td>". $row["Starting_station"] . "</td>";
     echo "<td>". $row["Terminus"] . "</td>";
     echo "<td>". $row["Distance"] . "</td>";
-    echo "<td>". $row["Distance"]*25 . "</td>";
-    echo "<td>". $row["Distance"]*95 . "</td>";
+    echo "<td><a href='order-economyticket.php'>". $row["Distance"]*25 . "</a></td>";
+    echo "<td><a href='order-economyticket.php'>". $row["Distance"]*95 . "</a></td>";
 
     echo "</tr>";
 }
@@ -276,7 +279,7 @@ require ('db.php');
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="logout.php">Logout</a>
         </div>
       </div>
     </div>
