@@ -182,12 +182,12 @@ require ('db.php');
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tickets Information</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Food Oder Information</h6>
             </div>
               <?php
               
-                $query  = "SELECT Route_no, Starting_station, Terminus, Distance ";
-                $query .= "FROM Route "; 
+                $query  = "SELECT Name, Price, Number, Cost ";
+                $query .= "FROM food "; 
 
                 $result = mysqli_query($connection, $query);
 
@@ -201,11 +201,10 @@ require ('db.php');
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                      <th>Start</th>
-                        <th>End</th>
-                        <th>Distance</th>
-                        <th>Economy Cost</th>
-                        <th>Business Cost</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Number</th>
+                        <th>Cost</th>
                     </tr>
                     </thead>
                     
@@ -213,12 +212,10 @@ require ('db.php');
                     
                     while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
-    echo "<td>". $row["Starting_station"] . "</td>";
-    echo "<td>". $row["Terminus"] . "</td>";
-    echo "<td>". $row["Distance"] . "</td>";
-    echo "<td><a href='order-economyticket.php'>". $row["Distance"]*25 . "</a></td>";
-    echo "<td><a href='order-economyticket.php'>". $row["Distance"]*95 . "</a></td>";
-
+    echo "<td>". $row["Name"] . "</td>";
+    echo "<td>". $row["Price"] . "</td>";
+    echo "<td>". $row["Number"] . "</td>";
+    echo "<td>". $row["Cost"] . "</td>";
     echo "</tr>";
 }
                     
