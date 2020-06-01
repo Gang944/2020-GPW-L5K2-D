@@ -186,7 +186,7 @@ require ('db.php');
             </div>
               <?php
               
-                $query  = "SELECT Name, Price, Number, Cost ";
+                $query  = "SELECT Name, Cost, Number, Price ";
                 $query .= "FROM food "; 
 
                 $result = mysqli_query($connection, $query);
@@ -202,9 +202,9 @@ require ('db.php');
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Price</th>
-                        <th>Number</th>
                         <th>Cost</th>
+                        <th>Number</th>
+                        <th>Price</th>
                     </tr>
                     </thead>
                     
@@ -213,9 +213,9 @@ require ('db.php');
                     while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>". $row["Name"] . "</td>";
-    echo "<td>". $row["Price"] . "</td>";
-    echo "<td>". $row["Number"] . "</td>";
     echo "<td>". $row["Cost"] . "</td>";
+    echo "<td>". $row["Number"] . "</td>";
+    echo "<td>". $row["Price"] . "</td>";
     echo "</tr>";
 }
                     
