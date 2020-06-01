@@ -2,16 +2,17 @@
 
 require ('db.php');
 
+
 if (isset($_POST['submit'])) {
-    if (empty($_POST['username']) || empty($_POST['password'])) {
-        $error = "username or password is empty";
+    if (empty($_POST['email']) || empty($_POST['password'])) {
+        $error = "email or password is empty";
     } else {
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         
-        $query  = "SELECT username, password ";
+        $query  = "SELECT email, password ";
         $query .= "FROM User ";
-        $query .= "WHERE username = '$username' AND password = '$password' ";
+        $query .= "WHERE email = '$email' AND password = '$password' ";
         
         $result = mysqli_query($connection, $query);
 
@@ -23,18 +24,11 @@ if (isset($_POST['submit'])) {
         if ($numrows == 1) {
             session_start();
             
-            $_SESSION['login_user'] = $username;
-            $_SESSION['login_level'] = $row['level'];
-
-            if ($_SESSION['login_level'] == 1) {
-                header('location: purchase-tickets.php');
-            } else if ($_SESSION['login_level'] == 2) {
-                header('location: index.php');
-            } 
-
+            $_SESSION['login_user'] = $email;
+            header('location:purchase-tickets.php');
         }
         else {
-            echo "login failed" ;
+            echo "Login failed";
         }
         mysqli_free_result($result);
     }
@@ -48,84 +42,91 @@ if (isset($error)) {
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<!doctype html>
-<html>
 <head>
-<meta charset="utf-8">
-<!--手机自适应<meta name="viewport" content="width=device,initial-scale=1.0">-->
-<title>Chengdu Bus Company</title> 
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script type="text/javascript" src="js/jquery.min.js"></script> 
-<script type="text/javascript" src="js/comm.js"></script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CBC</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
-<body>
-<!--head-->
-   <div class="header">
-   		<div class="inner">
-   			<div class="logo">
-   <a href="index.html" title="tickets"><img src="images/logo.png" width="350" height="60"/></a>
-   			</div>
-   			<div class="headlink">
-            <a href="index.html">Home Page</a>
-   				&nbsp;|&nbsp;
-   				<a href="login.html" style="border-bottom:2px solid #09F">Login</a>
-   				&nbsp;|&nbsp;
-   				<a href="sign.html">Sign Up</a>
-   				
-   				
-   			</div>
-   		</div>
-   </div>
-   <!--head end-->
-   <!--banner-->
-   <div class="middle">
-   <div class="cont">
-   		<div class="banner">
-   			<img src="images/tr.png" width="860" height="400" style="opacity:0.3"/>
-   		</div>
-   		<div class="main">
-    <div class="title">
-        <span>Welcome to Login</span>
-    </div>
- 
-    <div class="title-msg">
-        <span>Please enter your account and password</span>
-    </div>
- 
-    <form class="login-form" method="post" action="login.php" novalidate >
-        <!--输入框-->
-        <div class="input-content">
-            <!--autoFocus-->
-            <div>
-                <input type="text" autocomplete="off"
-                       placeholder="Username" name="username" required/>
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome to CBC!</h1>
+                  </div>
+                  <form class="user" action="login.php" method="post">
+                    <div class="form-group">
+                      <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                      </div>
+                    </div>
+                      <input type="submit" name="submit" value="Login" class="btn btn-primary btn-user btn-block">
+                  </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="forgot-password.php">Forgot Password?</a>
+                    </div>
+                    <div class="text-center">
+                    <a class="small" href="register.php">Create an Account!</a>
+                  </div>
+                </div>
+              </div>
             </div>
- 
-            <div style="margin-top: 16px">
-                <input type="password"
-                       autocomplete="off" placeholder="password" name="password" required/>
-            </div>
+          </div>
         </div>
- 
-        <!--登入按钮-->
-        <div style="text-align: center">
-            <button type="submit" name="submit" class="enter-btn" >Login</button>
-        </div>
- 
-        <div class="foor">
-            <a class="left" href="repassword.html"><span>Forget Password?</span></a>
- 
-            <a class="right" href="sign.html"><span>No account? Go sign up</span></a>
-        </div>
-    </form>
- 
-</div>
-   		</div>
-   </div> 
-    <!--banner end-->
-    <div class="foot">
-      
+
+      </div>
+
     </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>
