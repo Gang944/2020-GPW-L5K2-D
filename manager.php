@@ -18,12 +18,12 @@ require_once('db.php');
    <div class="header">
    		<div class="inner">
    			<div class="logo">
-   <a href="index.html" title="tickets"><img src="images/logo.png" width="350" height="60"/></a>
+   <a href="index.html" title="homepage"><img src="images/logo.png" width="350" height="60"/></a>
    			</div>
    			<div class="headlink">
    				<a href="m-login.php">Login</a>
    				&nbsp;|&nbsp;
-   				<a href="m-sign.php">Sign Up</a>
+   				<a href="m-repassword.php">Get Password</a>
                 &nbsp;|&nbsp;
 			    <a href="m-logout.php">Logout</a>
    				

@@ -59,14 +59,14 @@ if (isset($_POST['submit'])) {
    <div class="header">
    		<div class="inner">
    			<div class="logo">
-   <a href="manager.php" title="tickets"><img src="images/logo.png" width="350" height="60"/></a>
+   <a href="manager.php" title="homwpage"><img src="images/logo.png" width="350" height="60"/></a>
    			</div>
    			<div class="headlink">
             <a href="manager.php">Home Page</a>
    				&nbsp;|&nbsp;
    				<a href="m-login.php" style="border-bottom:2px solid #09F">Login</a>
    				&nbsp;|&nbsp;
-   				<a href="m-sign.php">Sign Up</a>
+   				<a href="m-repassword.php">Re-password</a>
    				
    				
    			</div>
@@ -109,9 +109,9 @@ if (isset($_POST['submit'])) {
         </div>
  
         <div class="foor">
-            <a class="left" href="m-sign.php"><span>No account? Go to sign!</span></a>
+            <a class="left" href="m-repassword.php"><span>Forget Your Password？</span></a>
  
-            <a class="right" href="m-login.php"><span>Already have account? Go login</span></a>
+            <a class="right" href="m-login.php"><span>Get Your Password? Go login</span></a>
         </div>
     </form>
             <br/>
