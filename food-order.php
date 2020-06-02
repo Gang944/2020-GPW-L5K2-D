@@ -205,6 +205,9 @@ require ('db.php');
                         <th>Price</th>
                         <th>Number</th>
                         <th>Cost</th>
+                        <td>Delete</td>
+                        <td>Update</td>
+                        <td>Add</td>
                     </tr>
                     </thead>
                     
@@ -216,9 +219,13 @@ require ('db.php');
     echo "<td>". $row["Price"] . "</td>";
     echo "<td>". $row["Number"] . "</td>";
     echo "<td>". $row["Cost"] . "</td>";
+    echo "<td><a href='deletefood.php?id=" . $row["id"] . "'>Delete</a></td>"; 
+    echo "<td><a href='updatefood.php?id=" . $row["id"] . "'>Update</a></td>";
+    echo "<td><a href='addfood.php?id=" . $row["id"] . "'>Add</a></td>";
     echo "</tr>";
-}
-                    
+
+                    }
+                   
                     ?>
                 </table>
                   
