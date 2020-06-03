@@ -32,7 +32,8 @@ if (!$result) {
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+<script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/utils.js"></script>
 </head>
 
 <body id="page-top">
@@ -89,14 +90,15 @@ if (!$result) {
 <!-- /.container-fluid -->
           <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Daily Income Chart</h6>
+                  
                 </div>
                 <div class="card-body">
                   <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                    <canvas id="canvas"></canvas>
+                      <?php require('income1.php')
+                      ?>
                   </div>
-                  <hr>
-                  This is show the Chengdu Business Company few days income recently.
+                  
                 </div>
               </div>
 </div>
@@ -119,14 +121,14 @@ if (!$result) {
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+ 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
     
-  <script src="vendor/chart.js/Chart.min.js"></script>
+  
 
   <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
+ 
 
 </body>
 
