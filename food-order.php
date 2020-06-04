@@ -182,7 +182,14 @@ require ('db.php');
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Food Oder Information</h6>
+              <h6 class="m-0 font-weight-bold text-primary"><center>Food Oder Information</center></h6>
+                <div class="Cart">
+            <a href="menu.php" title="Cart">
+            <span class="Cart_count">Check Menu</span>
+                    </a>
+            <a href="cart.php" title="Cart">
+            <span class="Cart_count">Go to Cart</span>
+                    </a>
             </div>
               <?php
               
