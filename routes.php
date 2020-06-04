@@ -33,7 +33,8 @@ if (!$result) {
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+<script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/utils.js"></script>
 </head>
 
 <body id="page-top">
@@ -95,10 +96,10 @@ if (!$result) {
                 </div>
                 <div class="card-body">
                   <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
+                    <canvas id="canvas"></canvas>
+                      <?php require('route-number.php')
+                      ?>
                   </div>
-                  <hr>
-                  This is the last mouth car tickets sold chart.
                 </div>
               </div>
 </div>
